@@ -1,0 +1,27 @@
+- id: 1
+  name: 運動
+  parent_id:
+- id: 2
+  name: 勉強
+  parent_id:
+- id: 3
+  name: 楽器
+  parent_id:
+- id: 4
+  name: アート
+  parent_id:
+- id: 5
+  name: 早寝早起き
+  parent_id:
+- id: 6
+  name: 料理
+  parent_id:
+- id: 7
+  name: リングフィットアドベンチャー
+  parent_id: 1
+- id: 8
+  name: 英検2級
+  parent_id: 2
+- id: 9
+  name: ギターの練習
+  parent_id: 3
