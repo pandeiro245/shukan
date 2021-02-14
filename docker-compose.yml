@@ -1,0 +1,20 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:12.2
+    stdin_open: true
+    tty: true
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      TZ: Asia/Tokyo
+    volumes:
+      - pgsql-data:/var/lib/postgresql/data:cached
+
+volumes:
+  pgsql-data:
+    driver: local
