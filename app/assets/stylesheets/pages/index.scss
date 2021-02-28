@@ -1,0 +1,28 @@
+/*======================
+イントロ
+======================*/
+.intro {
+    margin-top: 32px;
+    .intro_column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: -12px;
+        margin-left: -12px;
+    }
+    .intro_column-item {
+        padding-left: 12px;
+        padding-right: 12px;
+        width: 75%;
+        &.intro_column-item--media {
+            width: 25%;
+        }
+    }
+    .intro_text {
+        font-size: 14px;
+    }
+}
+
+/*======================
+使い方
+======================*/

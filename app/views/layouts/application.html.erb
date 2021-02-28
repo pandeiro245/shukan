@@ -11,6 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="g-wrapper">
+        <header class="g-site-herder">
+          <h1 class="g-site-header__logo">
+            <%= image_tag'g-site-logo.svg', alt: "シュウカン" %>
+          </h1>
+        </header>
+      <%= yield %>
+    </div>
   </body>
 </html>
