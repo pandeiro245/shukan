@@ -18,6 +18,6 @@ module Shukan
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.hosts << "bea3133f8ab741d985e4be298f6f37de.vfs.cloud9.ap-northeast-1.amazonaws.com"
+    config.hosts << ENV['WHITE_HOST']
   end
 end
