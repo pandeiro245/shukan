@@ -12,12 +12,17 @@
 
   <body>
     <div class="g-wrapper">
-        <header class="g-site-herder">
-          <h1 class="g-site-header__logo">
+        <header class="g-siteHerder">
+          <h1 class="g-siteHeader_logo">
             <%= image_tag'g-site-logo.svg', alt: "シュウカン" %>
           </h1>
         </header>
       <%= yield %>
+      <footer class="g-footer">
+        <div class="footer_inner">
+          <small class="c-copyright">&copy;shukan</small>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

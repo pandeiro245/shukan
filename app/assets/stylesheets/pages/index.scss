@@ -10,11 +10,11 @@
         margin-right: -12px;
         margin-left: -12px;
     }
-    .intro_column-item {
+    .intro_columnItem {
         padding-left: 12px;
         padding-right: 12px;
         width: 75%;
-        &.intro_column-item--media {
+        &.intro_columnItem-media {
             width: 25%;
         }
     }
@@ -26,3 +26,28 @@
 /*======================
 使い方
 ======================*/
+.howto_itemNumber {
+    font-size: 14px;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    background: #FF8A01;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+}
+.howtoList {
+    padding-left: 0;
+    .howtoList_item {
+        margin-top: 40px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.howto_itemImage {
+    margin-top: 18px;
+}
