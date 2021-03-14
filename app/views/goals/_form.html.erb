@@ -16,6 +16,11 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "--", class: 'input' %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
