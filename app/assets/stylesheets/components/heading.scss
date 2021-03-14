@@ -1,0 +1,23 @@
+.c-headingLv2 {
+    font-size: 22px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    &:after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 48px;
+        background: #FF8A01;
+        bottom: -8px;
+        display: block;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+
+.c-headingLv3 {
+    font-size: 16px;
+    font-weight: 700;
+}

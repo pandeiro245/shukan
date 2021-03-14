@@ -1,0 +1,29 @@
+.g-wrapper {
+  background: linear-gradient(90deg, #FFD542 50%, #FFCA42 50%);
+}
+
+.l-inner {
+  max-width: 960px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.content {
+  background: #fff;
+  border-radius: 8px;
+  .content_inner {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+  .content_header {
+    text-align: center;
+  }
+  .content_body {
+    margin-top: 32px;
+  }
+  &.content-howto {
+    margin-top: 90px;
+  }
+}
