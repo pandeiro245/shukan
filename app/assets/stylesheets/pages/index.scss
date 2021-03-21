@@ -7,19 +7,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: -12px;
-        margin-left: -12px;
+        margin-right: -8px;
+        margin-left: -8px;
     }
     .intro_columnItem {
-        padding-left: 12px;
-        padding-right: 12px;
-        width: 75%;
-        &.intro_columnItem-media {
-            width: 25%;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .intro_columnItem-media {
+        .c-image {
+            min-width: 106px;
         }
     }
     .intro_text {
-        font-size: 14px;
+        font-size: 18px;
+        line-height: 1.6;
+        em {
+            font-weight: 700;
+            font-style: normal;
+        }
     }
 }
 
@@ -50,4 +56,8 @@
 
 .howto_itemImage {
     margin-top: 18px;
+}
+
+.actionArea {
+    margin-top: 42px;
 }

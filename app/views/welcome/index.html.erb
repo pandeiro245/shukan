@@ -2,10 +2,8 @@
 <div class="l-inner">
   <div class="intro">
     <div class="intro_column">
-      <div class="intro_columItem">
-        <p class="intro_text">１週間だけ続けて習慣化</p>
-        <p class="intro_text">シュウカンは１週間だけ毎日続けるだけで習慣化できる
-無料サービスです</p>
+      <div class="intro_columnItem">
+        <p class="intro_text">シュウカンは毎日続けるだけで <em>習慣化</em>することができる無料サービスです</p>
       </div>
       <div class="intro_columnItem intro_columnItem-media">
         <div class="c-image">
@@ -15,8 +13,9 @@
     </div>
     <div class="loginContainer">
       <div class="login_item">
-        <p class="login_title">Twitterログイン</p>
-        <input type="text" placeholder="@hoge"></input>
+        <a class="login_itemLink">
+          <%= image_tag'index/button-twitter-login.svg', alt: "Twitterでログイン" %>
+        </a>
       </div>
     </div>
   </div>
@@ -45,13 +44,22 @@
             </div>
           </li>
           <li class="howtoList_item">
-            <h3 class="c-headingLv3"><span class="howto_itemNumber">3</span>他のひとのシュウカンを<br>
-  みることもできるよ！</h3>
+            <h3 class="c-headingLv3 c-headingLv3-center">他のひとのシュウカンを<br>みることもできるよ！</h3>
             <div class="howto_itemImage">
               <%= image_tag'index/img-howto-step1.png', alt: "早起き・筋トレ・英会話・勉強" %>
             </div>
           </li>
         </ol>
+      </div>
+      <div class="actionArea">
+        <p class="c-headingLv3 c-headingLv3-center">さあやってみよう！</p>
+        <div class="loginContainer">
+          <div class="login_item">
+            <a class="login_itemLink">
+              <%= image_tag'index/button-twitter-login.svg', alt: "Twitterでログイン" %>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -20,4 +20,7 @@
 .c-headingLv3 {
     font-size: 16px;
     font-weight: 700;
+    &.c-headingLv3-center {
+        text-align: center;
+    }
 }
