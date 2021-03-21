@@ -1,0 +1,13 @@
+えらい！ <br>
+また明日アクセスしてね
+
+<hr />
+<% date = nil %>
+<% @events.each do |event| %>
+  <% if date != event.date_on %>
+    <h2><%= date = event.date_on %></h2>
+    <hr />
+  <% end %>
+  <%= event.goal.name %>(<%= event.goal.category.name %>) by <%= event.goal.user.name %>
+<hr />
+<% end %>
