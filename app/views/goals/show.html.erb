@@ -3,6 +3,12 @@
 やること：<%= @goal.name %>
 <br />
 <br />
-<button>やったボタン</button>
+
+
+<%= form_with(model: @goal) do |form| %>
+    <%= form.hidden_field 'done', value: 'done' %>
+    <%= form.submit 'やったボタン' %>
+<% end %>
+
 <br />
 <br />
