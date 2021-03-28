@@ -16,15 +16,15 @@ class GoalsController < ApplicationController
   end
 
   def update
-    if goal_params[:done].present?
+    if goal_params[:done].present? && current_user.yet?
       date = Time.zone.now.to_date
       event = Event.find_or_initialize_by(
         date_on: date,
         goal: @goal
       )
       event.save
-      redirect_to events_path
     end
+    redirect_to events_path
   end
 
   private
