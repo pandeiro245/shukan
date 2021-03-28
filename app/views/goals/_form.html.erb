@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="c-field">
+    <%= form.label :'これまでの項目から選択', class:'c-field_label'%>
+    <%= form.text_field :name, class:'c-field_input' %>
   </div>
-
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "--", class: 'input' %>
+  <p class="field_text">もしくは</p>
+  <div class="c-field">
+    <%= form.label :'新しく登録する', class:'c-field_label' %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "--", class:'c-field_select' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit value: 'テスト', class:'c-button c-button-primary' %>
   </div>
 <% end %>
