@@ -62,3 +62,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'active_hash', '~> 2.3.0'
 gem 'dotenv-rails'
 gem 'omniauth-twitter'
+gem 'omniauth-rails_csrf_protection'

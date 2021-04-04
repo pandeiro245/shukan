@@ -10,4 +10,10 @@ class UsersController < ApplicationController
     session[:user_id] = user.id
     redirect_to '/'
   end
+
+  def login_with_twitter
+    user = User.find_or_create_from_auth(request.env['omniauth.auth'])
+    session[:user_id] = user.id
+    redirect_to '/'
+  end
 end
