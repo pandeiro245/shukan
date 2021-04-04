@@ -41,3 +41,17 @@
     <%= form.submit value: 'このシュウカンでがんばる！', class:'c-button c-button-primary' %>
   </div>
 <% end %>
+
+<% if current_user.goals.present? %>
+  <h2>過去の目標を今週も継続</h2>
+  <ul>
+  <% current_user.goals.each do |goal| %>
+    <li>
+      <%= form_with(model: goal) do |form| %>
+        <%= goal.name %>(<%= goal.category.name %>)<%= form.submit 'これを継続' %>
+        <%= form.hidden_field :again, value: :again %>
+      <% end %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>

@@ -1,11 +1,12 @@
 class WelcomeController < ApplicationController
   def check
     if current_user.present?
-      if current_user.goals.blank?
+      case current_user.status
+      when 'no goal'
         redirect_to new_goal_path
-      elsif current_user.yet?
-        redirect_to goal_path(current_user.goals.last)
-      else
+      when 'yet'
+        redirect_to goal_path(current_user.goal)
+      when 'done'
         redirect_to events_path
       end
     else

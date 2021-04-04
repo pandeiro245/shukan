@@ -13,11 +13,10 @@
     </div>
     <div class="loginContainer">
       <div class="login_item">
-        <a class="login_itemLink">
-          <span class="c-button c-button-twitter">
+        <%= link_to "/auth/twitter", method: :post, class: 'login_itemLink' do %>
+            <span class="c-button c-button-twitter">
             <span class="c-button_label">Twitterでログイン</span>
-          </span>
-        </a>
+        <% end %>
       </div>
     </div>
   </div>
