@@ -11,17 +11,25 @@
     </div>
   <% end %>
 
-  <div class="c-field">
-    <%= form.label :'これまでの項目から選択', class:'c-field_label'%>
-    <%= form.text_field :name, class:'c-field_input' %>
-  </div>
-  <p class="field_text">もしくは</p>
-  <div class="c-field">
-    <%= form.label :'新しく登録する', class:'c-field_label' %>
-    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "--", class:'c-field_select' %>
+  <div class="c-field_wrapper">
+    <div class="c-field_item">
+      <div class="c-field">
+        <%= form.label :'これまでの項目から選択', class:'c-field_label'%>
+        <%= form.collection_select :category_id, Category.all, :id, :name, {prompt: ""}, {class: "c-field_select"} %>
+      </div>
+    </div>
+    <div class="c-field_item">
+      <p class="field_text">もしくは</p>
+    </div>
+    <div class="c-field_item">
+      <div class="c-field">
+        <%= form.label :'新しく登録する', class:'c-field_label' %>
+        <%= form.text_field :name, placeholder: '例）筋トレ', class:'c-field_input' %>
+      </div>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit value: 'テスト', class:'c-button c-button-primary' %>
+  <div class="goalActions">
+    <%= form.submit value: 'このシュウカンでがんばる！', class:'c-button c-button-primary' %>
   </div>
 <% end %>
