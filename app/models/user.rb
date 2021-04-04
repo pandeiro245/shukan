@@ -27,4 +27,13 @@ class User < ApplicationRecord
     self.token = SecureRandom.hex(64)
     self.save!
   end
+
+  def self.find_or_create_from_auth(auth)
+    uid = auth[:uid]
+    name = auth[:info][:name]
+
+    self.find_or_create_by(twitter_id: uid) do |user|
+      user.name = name
+    end
+  end
 end
