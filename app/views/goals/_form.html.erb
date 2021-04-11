@@ -10,19 +10,35 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="goalIntro">
+    <!--ここ動的に......-->
+    <p class="term">2020.02.08〜2020.02.12</p>
+    <p class="goalIntro_text">今週挑戦したいシュウカンを<br>これまでの項目から選択するか、<br>新しく登録してね</p>
+    <div class="goalIntro_image">
+      <%= image_tag 'goal/img-goal-intro.png' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "--", class: 'input' %>
+  <div class="c-field_wrapper">
+    <div class="c-field_item">
+      <div class="c-field">
+        <%= form.label :'これまでの項目から選択', class:'c-field_label'%>
+        <%= form.collection_select :category_id, Category.all, :id, :name, {prompt: ""}, {class: "c-field_select"} %>
+      </div>
+    </div>
+    <div class="c-field_item">
+      <p class="field_text">もしくは</p>
+    </div>
+    <div class="c-field_item">
+      <div class="c-field">
+        <%= form.label :'新しく登録する', class:'c-field_label' %>
+        <%= form.text_field :name, placeholder: '例）筋トレ', class:'c-field_input' %>
+      </div>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="goalActions">
+    <%= form.submit value: 'このシュウカンでがんばる！', class:'c-button c-button-primary' %>
   </div>
 <% end %>
 
