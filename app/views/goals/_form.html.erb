@@ -20,19 +20,29 @@
   </div>
 
   <div class="c-field_wrapper">
-    <div class="c-field_item">
-      <div class="c-field">
-        <%= form.label :'これまでの項目から選択', class:'c-field_label'%>
-        <%= form.collection_select :category_id, Category.all, :id, :name, {prompt: ""}, {class: "c-field_select"} %>
-      </div>
-    </div>
+    <% if current_user.goals.present? %>
+    <h2>過去の目標を今週も継続</h2>
+    <ul>
+    <% current_user.goals.each do |goal| %>
+      <li>
+        <%= form_with(model: goal) do |form| %>
+          <%= goal.name %>(<%= goal.category.name %>)<%= form.submit 'これを継続' %>
+          <%= form.hidden_field :again, value: :again %>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
     <div class="c-field_item">
       <p class="field_text">もしくは</p>
     </div>
+    <% end %>
     <div class="c-field_item">
       <div class="c-field">
         <%= form.label :'新しく登録する', class:'c-field_label' %>
-        <%= form.text_field :name, placeholder: '例）筋トレ', class:'c-field_input' %>
+        <%= form.collection_select :category_id, Category.all, :id, :name, {prompt: ""}, {class: "c-field_select"} %>
+      </div>
+      <div class="c-field">
+        <%= form.text_field :name, placeholder: '例）腕立て10回する、英単語20個覚える', class:'c-field_input' %>
       </div>
     </div>
   </div>
@@ -42,16 +52,3 @@
   </div>
 <% end %>
 
-<% if current_user.goals.present? %>
-  <h2>過去の目標を今週も継続</h2>
-  <ul>
-  <% current_user.goals.each do |goal| %>
-    <li>
-      <%= form_with(model: goal) do |form| %>
-        <%= goal.name %>(<%= goal.category.name %>)<%= form.submit 'これを継続' %>
-        <%= form.hidden_field :again, value: :again %>
-      <% end %>
-    </li>
-  <% end %>
-  </ul>
-<% end %>
