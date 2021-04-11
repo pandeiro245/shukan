@@ -6,7 +6,7 @@ require 'rack/rewrite'
 if ENV['RACK_ENV'] == 'production'
   use Rack::Rewrite do
     r301 %r{.*}, 'https://shukan.today$&', :if => Proc.new {|rack_env|
-       rack_env['SERVER_NAME'] != 'mynewdomain.com'
+      rack_env['SERVER_NAME'] != 'shukan.today'
     }
   end
 end
