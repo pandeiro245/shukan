@@ -1,6 +1,6 @@
 # README
 
-this is SHUKAN !
+this is SHUKAN
 
 # Install
 
