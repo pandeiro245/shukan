@@ -16,12 +16,4 @@
 - id: 6
   name: 料理
   parent_id:
-- id: 7
-  name: リングフィットアドベンチャー
-  parent_id: 1
-- id: 8
-  name: 英検2級
-  parent_id: 2
-- id: 9
-  name: ギターの練習
-  parent_id: 3
+
