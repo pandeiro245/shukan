@@ -8,3 +8,4 @@ this is SHUKAN
 rails webpacker:install
 rails webpacker:compile
 ```
+
