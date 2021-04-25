@@ -14,7 +14,8 @@
     <div class="loginContainer">
       <div class="login_item">
         <%= link_to "/auth/twitter", method: :post, class: 'login_itemLink' do %>
-          <%= image_tag'index/button-twitter-login.svg', alt: "Twitterでログイン" %>
+            <span class="c-button c-button-twitter">
+            <span class="c-button_label">Twitterでログイン</span>
         <% end %>
       </div>
     </div>

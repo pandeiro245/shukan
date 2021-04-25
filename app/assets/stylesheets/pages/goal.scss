@@ -1,0 +1,35 @@
+.goalIntro {
+    margin-top: 32px;
+    .term {
+        font-size: 12px;
+        text-align: center;
+    }
+    .goalIntro_text {
+        margin-top: 14px;
+        text-align: center;
+    }
+    .goalIntro_image {
+        margin-top: 16px;
+    }
+}
+.goalActions {
+    margin-top: 32px;
+}
+
+.c-goalList {
+    padding-left: 0;
+    margin-top: 16px;
+    .c-goalList_item {
+        margin-top: 12px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.c-goal_name {
+    border: 0;
+    background: transparent;
+    border-bottom: solid 1px #333;
+    padding: 0;
+}

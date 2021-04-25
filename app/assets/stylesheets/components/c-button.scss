@@ -1,0 +1,35 @@
+.c-button {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    border-radius: 8px;
+    border: 0;
+    color: #fff;
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    .c-button_label {
+        font-size: 18px;
+        font-weight: 700;
+    }
+    &.c-button-primary {
+        background: #FF8A01;
+    }
+    &.c-button-twitter {
+        background: #1DA1F2;
+        .c-button_label {
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: auto;
+                width: 15px;
+                height: 15px;
+                display: block;
+                background-image: url('/assets/images/icon/icon-twitter.svg');
+            }
+        }
+    }
+}
