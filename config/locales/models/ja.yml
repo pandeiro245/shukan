@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      goal: 目標
+    attributes:
+      goal:
+        category: カテゴリー
+        name: 内容
