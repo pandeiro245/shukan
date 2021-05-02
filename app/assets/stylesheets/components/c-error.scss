@@ -6,10 +6,25 @@
     border-radius: 4px;
     background: #FFCDEE;
     padding: 16px 32px;
+    padding-left: 46px;
 }
 
 .formError_listItem {
     color: #FF10AE;
     font-size: 14px;
     font-weight: 700;
+    position: relative;
+    &:before {
+        content: '';
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #FF10AE;
+        display: inline-block;
+        position: absolute;
+        left: -14px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
 }
