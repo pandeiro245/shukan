@@ -37,8 +37,12 @@
       </ul>
     </div>
     <% end %>
+    
+    <%= form_with(model: goal) do |form| %>
     <div class="c-field">
+      <% if current_user.goals.present? %>
       <p class="c-field_text">もしくは</p>
+      <% end %>
       <p class='c-field_label'>新しく登録する</p>
       <div class="c-field_item">
         <%= form.label :'カテゴリ選択', class:'c-field_inputLabel'%>
@@ -54,4 +58,8 @@
   <div class="goalActions">
     <%= form.submit value: 'このシュウカンでがんばる！', class:'c-button c-button-primary' %>
   </div>
+  
+  <% end %>
+  
+  
 <% end %>
