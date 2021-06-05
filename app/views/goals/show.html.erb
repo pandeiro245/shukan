@@ -1,14 +1,20 @@
-カテゴリー：<%= @goal.category.name %>
-<br />
-やること：<%= @goal.name %>
-<br />
-<br />
-
-
-<%= form_with(model: @goal) do |form| %>
-    <%= form.hidden_field 'done', value: 'done' %>
-    <%= form.submit 'やったボタン' %>
-<% end %>
-
-<br />
-<br />
+<div class="l-inner">
+    <div class="content">
+        <div class="content_inner">
+            <div class="content_header">
+                <h2 class="c-headingLv2"><%= @goal.name %>（<%= @goal.category.name %>）</h2>
+            </div>
+            <div class="content_body">
+                <div class="goalShowImage">
+                  <%= image_tag 'goal/img-goal-show.png' %>
+                </div>
+                <div class="goalActions">
+                    <%= form_with(model: @goal) do |form| %>
+                        <%= form.hidden_field 'done', value: 'done' %>
+                        <%= form.submit 'このシュウカンをこなした！', class:'c-button c-button-primary' %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
