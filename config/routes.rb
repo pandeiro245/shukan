@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :goals, only: [:new, :create, :show, :update]
+  resources :goals
   resources :events, only: [:index]
 
   root 'welcome#check'
