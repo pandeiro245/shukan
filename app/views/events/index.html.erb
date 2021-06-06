@@ -1,8 +1,54 @@
-えらい！ <br>
-明日もシュウカンを続けましょう！
-
-<div class="eventsIntro_image">
-  <%= image_tag 'events/img-events.png' %>
+<div class="l-inner">
+  <div class="content">
+    <div class="content_inner">
+      <div class="content_header">
+        <h2 class="c-headingLv2">おつかれさまでした！</h2>
+        <p class="content_lead">えらい！<br>明日もシュウカンを続けましょう！</p>
+      </div>
+      <div class="content_body">
+        <div class="eventsImage">
+          <%= image_tag 'events/img-events.png' %>
+        </div>
+        <div class="weeklyStamp">
+          <ul class="weeklyStampList">
+            <li class="weeklyStampList_item">mon</li>
+            <li class="weeklyStampList_item">tue</li>
+            <li class="weeklyStampList_item">wed</li>
+            <li class="weeklyStampList_item">thu</li>
+            <li class="weeklyStampList_item">fir</li>
+            <li class="weeklyStampList_item">sat</li>
+            <li class="weeklyStampList_item">sun</li>
+          </ul>
+        </div>
+        <div class="shareAction">
+          <!--リンクをここに-->
+          <!--<a href="https://twitter.com/share?url=【URL】&text=【テキスト】</a>-->
+          <button class="c-button c-button-twitter"><i class="c-button_icon"></i>Twitterでシェア</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content_inner">
+      <div class="content_header">
+        <h2 class="c-headingLv2">他の人のシュウカンを見る</h2>
+      </div>
+      <div class="content_body">
+        <% date = nil %>
+        <div class="eventsGoalEntryImage">
+          <img src="https://picsum.photos/96/96" />
+        </div>
+        <p class="eventsGoalEntryText">
+          <% @events.each do |event| %>
+            <span class="userName"><%= event.goal.user.name %></span>
+            さんが、
+            <span class="goalName"><%= event.goal.name %>(<%= event.goal.category.name %>)</span>
+            を達成しました！
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <hr />

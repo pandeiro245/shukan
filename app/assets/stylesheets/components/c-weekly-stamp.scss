@@ -1,0 +1,26 @@
+.weeklyStampList {
+    padding: 0;
+    text-align: center;
+    .weeklyStampList_item {
+        width: 52px;
+        height: 52px;
+        border: solid 6px #BFBFBF;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        color: #BFBFBF;
+        margin-right: 19px;
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+        &:nth-child(5n) {
+            margin-left: 38px;
+        }
+    }
+}
+
+.shareAction {
+    margin-top: 24px;
+}
