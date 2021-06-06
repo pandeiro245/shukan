@@ -1,5 +1,9 @@
 えらい！ <br>
-また明日アクセスしてね
+明日もシュウカンを続けましょう！
+
+<div class="eventsIntro_image">
+  <%= image_tag 'events/img-events.png' %>
+</div>
 
 <hr />
 <% date = nil %>
@@ -8,6 +12,6 @@
     <h2><%= date = event.date_on %></h2>
     <hr />
   <% end %>
-  <%= event.goal.name %>(<%= event.goal.category.name %>) by <%= event.goal.user.name %>
+  <%= event.goal.user.name %>さんが、<%= event.goal.name %>(<%= event.goal.category.name %>)を達成しました！
 <hr />
 <% end %>
