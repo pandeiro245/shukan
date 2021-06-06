@@ -2,7 +2,11 @@
     <div class="content">
         <div class="content_inner">
             <div class="content_header">
-                <h2 class="c-headingLv2"><%= @goal.name %>（<%= @goal.category.name %>）</h2>
+                <% from = Date.current.beginning_of_week; to =  from + 6.day %>
+                <p class="term"><%= from.strftime('%Y.%m.%d') %>〜<%= to.strftime('%Y.%m.%d') %>のシュウカン</p>
+                <div class="goalShowHeading">
+                    <h2 class="c-headingLv2"><%= @goal.name %></h2>
+                </div>
             </div>
             <div class="content_body">
                 <div class="goalShowImage">
