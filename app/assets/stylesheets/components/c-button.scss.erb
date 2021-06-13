@@ -37,3 +37,17 @@
         }
     }
 }
+
+.c-button_icon {
+    display: inline-block;
+    margin-right: 4px;
+    &:before {
+        content: '';
+        width: 16px;
+        display: block;
+        height: 16px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("<%= asset_path('icon/icon-twitter.svg') %>")
+    }
+}
