@@ -46,3 +46,14 @@
 .goalShowHeading {
     margin-top: 16px;
 }
+
+.goalEdit {
+    text-align: center;
+    margin-top: 32px;
+    .goalEdit_button {
+        border: 0;
+        background: transparent;
+        font-size: 14px;
+        text-decoration: underline;
+    }
+}

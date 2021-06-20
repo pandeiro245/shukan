@@ -18,7 +18,32 @@
                         <%= form.submit 'このシュウカンをこなした！', class:'c-button c-button-primary' %>
                     <% end %>
                 </div>
+                <div class="goalEdit">
+                    <button class="goalEdit_button"><span class="c-icon c-icon-settings"><%= image_tag 'icon/icon-settings' %></span>このシュウカンについて</button>
+                </div>
             </div>
         </div>
     </div>
+</div>
+<div class="c-modal">
+    <div class="c-modal_content">
+        <p class="c-headingLv2">シュウカン設定</p>
+        <p class="term"><%= from.strftime('%Y.%m.%d') %>〜<%= to.strftime('%Y.%m.%d') %>のシュウカン</p>
+        <p><%= @goal.name %></p>
+    </div>
+    <%= form_with(model: goal) do |form| %>
+    <div class="c-field">
+        <div class="c-field_item">
+            <%= form.label :'カテゴリ選択', class:'c-field_inputLabel'%>
+            <%= form.collection_select :category_id, Category.all, :id, :name, {prompt: ""}, {class: "c-field_select"} %>
+        </div>
+        <div class="c-field_item">
+            <%= form.label :'内容を入力', class:'c-field_inputLabel' %>
+            <%= form.text_field :name, placeholder: '例）筋トレ', class:'c-field_input' %>
+        </div>
+    </div>
+    <div class="goalActions">
+        <%= form.submit value: '修正する', class:'c-button c-button-primary' %>
+    </div>
+    <% end %>
 </div>
