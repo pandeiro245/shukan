@@ -1,12 +1,8 @@
-.c-field_wrapper {
-    margin-top: 40px;
-}
-
 .c-field_item {
     margin-top: 8px;
 }
 .c-field {
-    margin-top: 8px;
+    margin-top: 32px;
     .c-field_label{
         font-size: 16px;
         font-weight: 700;
@@ -22,15 +18,22 @@
     }
     .c-field_input,
     .c-field_select {
-        padding-top: 16px;
-        padding-bottom: 16px;
+        padding: 16px 12px;
         border-radius: 8px;
         border: solid 1px #BFBFBF;
         width: 100%;
         margin-top: 8px;
+        cursor: pointer;
     }
 }
 
-.field_text {
+.c-field_label + .c-field_item {
+    margin-top: 18px;
+}
+
+.c-field_text {
     text-align: center;
+    + .c-field_label {
+        margin-top: 24px;
+    }
 }
