@@ -11,13 +11,13 @@
         </div>
         <div class="weeklyStamp">
           <ul class="weeklyStampList">
-            <li class="weeklyStampList_item">mon</li>
-            <li class="weeklyStampList_item">tue</li>
-            <li class="weeklyStampList_item">wed</li>
-            <li class="weeklyStampList_item">thu</li>
-            <li class="weeklyStampList_item">fir</li>
-            <li class="weeklyStampList_item">sat</li>
-            <li class="weeklyStampList_item">sun</li>
+            <li class="weeklyStampList_item <%= 'is-checked' if @current_week_events['Mon'].present? %>">mon</li>
+            <li class="weeklyStampList_item <%= 'is-checked' if @current_week_events['Tue'].present? %>">tue</li>
+            <li class="weeklyStampList_item <%= 'is-checked' if @current_week_events['Wed'].present? %>">wed</li>
+            <li class="weeklyStampList_item <%= 'is-checked' if @current_week_events['Thu'].present? %>">thu</li>
+            <li class="weeklyStampList_item <%= 'is-checked' if @current_week_events['Fri'].present? %>">fri</li>
+            <li class="weeklyStampList_item <%= 'is-checked' if @current_week_events['Sat'].present? %>">sat</li>
+            <li class="weeklyStampList_item <%= 'is-checked' if @current_week_events['Sun'].present? %>">sun</li>
           </ul>
         </div>
         <div class="shareAction">
