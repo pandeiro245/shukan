@@ -1,6 +1,10 @@
 .weeklyStampList {
     padding: 0;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     .weeklyStampList_item {
         width: 52px;
         height: 52px;
@@ -12,15 +16,47 @@
         font-size: 18px;
         color: #BFBFBF;
         margin-right: 19px;
+        position: relative;
         &:nth-child(4n) {
             margin-right: 0;
         }
         &:nth-child(5n) {
-            margin-left: 38px;
+            margin-left: 20px;
+        }
+        &.is-checked {
+            border-color: #2B2B2B;
+            font-size: 0;
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                transform: rotate(-45deg);
+            }
+            &:after {
+                width: 32px;
+                height: 12px;
+                // border: solid 8px #FF8A01;
+                border-left: 8px solid #FF8A01;
+                border-bottom: 8px solid #FF8A01;
+                left: 8px;
+                bottom: 20px;
+                z-index: 1;
+            }
+            &:before {
+                width: 28px;
+                height: 10px;
+                left: 9px;
+                bottom: 18px;
+                border-left: 14px solid #FFFFFF;
+                border-bottom: 14px solid #FFFFFF;
+            }
         }
     }
 }
 
 .shareAction {
     margin-top: 24px;
+    a {
+        text-decoration: none;
+    }
 }
