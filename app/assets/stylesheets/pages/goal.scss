@@ -16,6 +16,14 @@
     margin-top: 32px;
 }
 
+.goalShowImage {
+    width: 50%;
+    margin: 0 auto;
+    img {
+        width: 100%;
+    }
+}
+
 .c-goalList {
     padding-left: 0;
     margin-top: 16px;
@@ -32,4 +40,9 @@
     background: transparent;
     border-bottom: solid 1px #333;
     padding: 0;
+    cursor: pointer;
+}
+
+.goalShowHeading {
+    margin-top: 16px;
 }

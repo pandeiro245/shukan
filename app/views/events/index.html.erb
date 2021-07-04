@@ -1,13 +1,52 @@
-えらい！ <br>
-また明日アクセスしてね
-
-<hr />
-<% date = nil %>
-<% @events.each do |event| %>
-  <% if date != event.date_on %>
-    <h2><%= date = event.date_on %></h2>
-    <hr />
-  <% end %>
-  <%= event.goal.name %>(<%= event.goal.category.name %>) by <%= event.goal.user.name %>
-<hr />
-<% end %>
+<div class="l-inner">
+  <div class="content">
+    <div class="content_inner">
+      <div class="content_header">
+        <h2 class="c-headingLv2">おつかれさまでした！</h2>
+        <p class="content_lead">えらい！<br>明日もシュウカンを続けましょう！</p>
+      </div>
+      <div class="content_body">
+        <div class="eventsImage">
+          <%= image_tag 'events/img-events.png' %>
+        </div>
+        <div class="weeklyStamp">
+          <ul class="weeklyStampList">
+            <% %w(Mon Tue Wed Thu Fri Sat Sun).each do |wday| %>
+            <li class="weeklyStampList_item <%= 'is-checked' if @current_week_events[wday].present? %>"><%= wday.downcase %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="shareAction">
+          <a href="https://twitter.com/share?url=https://shukan.today/&text=「<%= @current_user.goal.name %>」を達成しました！/&hashtags=shukan" target="_blank" class="c-button c-button-twitter"><i class="c-button_icon"></i>Twitterでシェア</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content_inner">
+      <div class="content_header">
+        <h2 class="c-headingLv2">他の人のシュウカンを見る</h2>
+      </div>
+      <div class="content_body">
+        <% date = nil %>
+        <ul class="eventsGoalEntryList">
+          <% @events.each do |event| %>
+          <li class="eventsGoalEntryList_item">
+            <div class="eventsEntryColumn">
+              <div class="eventsEntryColumn_image">
+                <%= image_tag event.goal.user.image_url, width: '96' %>
+              </div>
+              <p class="eventsEntryColumn_text">
+                <span class="userName"><%= event.goal.user.name %></span>
+                さんが、
+                <span class="goalName"><%= event.goal.name %>(<%= event.goal.category.name %>)</span>
+                を達成しました！
+              </p>
+            </div>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

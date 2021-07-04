@@ -1,15 +1,3 @@
-<%= form_with(model: goal) do |form| %>
-  <% if goal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
-
-      <ul>
-        <% goal.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
   <div class="goalIntro">
   <% from = Date.current.beginning_of_week; to =  from + 6.day %>
   <p class="term"><%= from.strftime('%Y.%m.%d') %>〜<%= to.strftime('%Y.%m.%d') %></p>
@@ -19,35 +7,48 @@
     </div>
   </div>
 
-  <div class="c-field_wrapper">
-  <% if current_user.goals.present? %>
-  <div class="c-field">
-    <p class='c-field_label'>継続する</p>
-    <ul class="c-goalList">
-    <% current_user.goals.each do |goal| %>
-      <li class="c-goalList_item">
-        <%= form_with(model: goal) do |form| %>
-          <%= form.submit goal.name, class:'c-goal_name' %>
-          <%= form.hidden_field :again, value: :again %>
-          (<%= goal.category.name %>)
+  <% if goal.errors.any? %>
+    <div id="error_explanation" class="formError">
+      <ul class="formError_list">
+        <% goal.errors.each do |error| %>
+          <li class="formError_listItem">
+            <p class="errorText"><%= error.full_message %></p>
+          </li>
         <% end %>
-      </li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
-    <div class="c-field_item">
-      <p class="field_text">もしくは</p>
+      </ul>
     </div>
-    <div class="c-field_item">
-      <div class="c-field">
-        <%= form.label :'カテゴリ選択', class:'c-field_label'%>
+  <% end %>
+
+  <div class="c-field_wrapper">
+    <% if current_user.goals.present? %>
+    <div class="c-field">
+      <p class='c-field_label'>継続する</p>
+      <ul class="c-goalList">
+      <% current_user.goals.each do |goal| %>
+        <li class="c-goalList_item">
+          <%= form_with(model: goal) do |form| %>
+            <%= form.submit goal.name, class:'c-goal_name' %>
+            <%= form.hidden_field :again, value: :again %>
+            (<%= goal.category.name %>)
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+    
+    <%= form_with(model: goal) do |form| %>
+    <div class="c-field">
+      <% if current_user.goals.present? %>
+      <p class="c-field_text">もしくは</p>
+      <% end %>
+      <p class='c-field_label'>新しく登録する</p>
+      <div class="c-field_item">
+        <%= form.label :'カテゴリ選択', class:'c-field_inputLabel'%>
         <%= form.collection_select :category_id, Category.all, :id, :name, {prompt: ""}, {class: "c-field_select"} %>
       </div>
-    </div>
-    <div class="c-field_item">
-      <div class="c-field">
-        <%= form.label :'新しく登録する', class:'c-field_label' %>
+      <div class="c-field_item">
+        <%= form.label :'内容を入力', class:'c-field_inputLabel' %>
         <%= form.text_field :name, placeholder: '例）筋トレ', class:'c-field_input' %>
       </div>
     </div>
@@ -56,4 +57,7 @@
   <div class="goalActions">
     <%= form.submit value: 'このシュウカンでがんばる！', class:'c-button c-button-primary' %>
   </div>
-<% end %>
+  
+  <% end %>
+  
+  

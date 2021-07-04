@@ -1,0 +1,39 @@
+.eventsEntryColumn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .eventsEntryColumn_image {
+        margin-right: 12px;
+        border: solid 1px #FF8A01;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .eventsEntryColumn_text {
+        font-size: 12px;
+        flex: 1;
+    }
+    .userName {
+        font-weight: 700;
+    }
+    
+    .goalName {
+        font-weight: 700;
+        color: #F241B6;
+    }
+}
+
+.eventsGoalEntryList {
+    padding-left: 0;
+    .eventsGoalEntryList_item {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-bottom: solid 1px #BFBFBF;
+    }
+}
+
+.eventsImage {
+    max-width: 174px;
+    margin: 0 auto;
+}
