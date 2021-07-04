@@ -11,19 +11,13 @@
         </div>
         <div class="weeklyStamp">
           <ul class="weeklyStampList">
-            <li class="weeklyStampList_item">mon</li>
-            <li class="weeklyStampList_item">tue</li>
-            <li class="weeklyStampList_item">wed</li>
-            <li class="weeklyStampList_item">thu</li>
-            <li class="weeklyStampList_item">fir</li>
-            <li class="weeklyStampList_item">sat</li>
-            <li class="weeklyStampList_item">sun</li>
+            <% %w(Mon Tue Wed Thu Fri Sat Sun).each do |wday| %>
+            <li class="weeklyStampList_item <%= 'is-checked' if @current_week_events[wday].present? %>"><%= wday.downcase %></li>
+            <% end %>
           </ul>
         </div>
         <div class="shareAction">
-          <!--リンクをここに-->
-          <!--<a href="https://twitter.com/share?url=【URL】&text=【テキスト】</a>-->
-          <button class="c-button c-button-twitter"><i class="c-button_icon"></i>Twitterでシェア</button>
+          <a href="https://twitter.com/share?url=https://shukan.today/&text=「<%= @current_user.goal.name %>」を達成しました！/&hashtags=shukan" target="_blank" class="c-button c-button-twitter"><i class="c-button_icon"></i>Twitterでシェア</a>
         </div>
       </div>
     </div>
@@ -35,29 +29,24 @@
       </div>
       <div class="content_body">
         <% date = nil %>
-        <div class="eventsGoalEntryImage">
-          <img src="https://picsum.photos/96/96" />
-        </div>
-        <p class="eventsGoalEntryText">
+        <ul class="eventsGoalEntryList">
           <% @events.each do |event| %>
-            <span class="userName"><%= event.goal.user.name %></span>
-            さんが、
-            <span class="goalName"><%= event.goal.name %>(<%= event.goal.category.name %>)</span>
-            を達成しました！
+          <li class="eventsGoalEntryList_item">
+            <div class="eventsEntryColumn">
+              <div class="eventsEntryColumn_image">
+                <img src="https://picsum.photos/96/96" />
+              </div>
+              <p class="eventsEntryColumn_text">
+                <span class="userName"><%= event.goal.user.name %></span>
+                さんが、
+                <span class="goalName"><%= event.goal.name %>(<%= event.goal.category.name %>)</span>
+                を達成しました！
+              </p>
+            </div>
+          </li>
           <% end %>
-        </p>
+        </ul>
       </div>
     </div>
   </div>
 </div>
-
-<hr />
-<% date = nil %>
-<% @events.each do |event| %>
-  <% if date != event.date_on %>
-    <h2><%= date = event.date_on %></h2>
-    <hr />
-  <% end %>
-  <%= event.goal.user.name %>さんが、<%= event.goal.name %>(<%= event.goal.category.name %>)を達成しました！
-<hr />
-<% end %>
