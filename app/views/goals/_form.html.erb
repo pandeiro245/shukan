@@ -1,4 +1,3 @@
-<%= form_with(model: goal) do |form| %>
   <div class="goalIntro">
   <% from = Date.current.beginning_of_week; to =  from + 6.day %>
   <p class="term"><%= from.strftime('%Y.%m.%d') %>〜<%= to.strftime('%Y.%m.%d') %></p>
@@ -62,4 +61,3 @@
   <% end %>
   
   
-<% end %>
