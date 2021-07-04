@@ -34,7 +34,7 @@
           <li class="eventsGoalEntryList_item">
             <div class="eventsEntryColumn">
               <div class="eventsEntryColumn_image">
-                <img src="https://picsum.photos/96/96" />
+                <%= image_tag event.goal.user.image_url, width: '96' %>
               </div>
               <p class="eventsEntryColumn_text">
                 <span class="userName"><%= event.goal.user.name %></span>
