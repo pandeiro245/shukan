@@ -3,7 +3,7 @@ class User < ApplicationRecord
   belongs_to :goal, optional: true
 
   def yet?
-    Event.where(goal: goal, date_on: Time.zone.now.to_date).blank?
+    Event.where(goal: goal, date_on: Date.current).blank?
   end
 
   def no_goal?
