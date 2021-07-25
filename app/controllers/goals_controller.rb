@@ -20,9 +20,8 @@ class GoalsController < ApplicationController
 
   def update
     if goal_params[:done].present? && current_user.yet?
-      date = Time.zone.now.to_date
       event = Event.find_or_initialize_by(
-        date_on: date,
+        date_on: Date.current,
         goal: @goal
       )
       event.save!
