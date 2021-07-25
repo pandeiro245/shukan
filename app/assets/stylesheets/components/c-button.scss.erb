@@ -23,17 +23,9 @@
         background: #1DA1F2;
         .c-button_label {
             position: relative;
-            &:before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                margin: auto;
-                width: 15px;
-                height: 15px;
-                display: block;
-                background-image: url('/assets/images/icon/icon-twitter.svg');
-            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
@@ -43,11 +35,12 @@
     margin-right: 4px;
     &:before {
         content: '';
-        width: 16px;
+        width: 1em;
         display: block;
-        height: 16px;
+        height: 1em;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: contain;
         background-image: url("<%= asset_path('icon/icon-twitter.svg') %>")
     }
 }
