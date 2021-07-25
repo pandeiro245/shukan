@@ -15,8 +15,9 @@
       <div class="login_item">
         <%= link_to "/auth/twitter", method: :post, class: 'login_itemLink' do %>
             <span class="c-button c-button-twitter">
-            <span class="c-button_label">Twitterでログイン</span>
+            <span class="c-button_label"><i class="c-button_icon"></i>Twitterでログイン</span>
         <% end %>
+        <p class="login_lead">shukanはツイート権限を取得しません。安心してご利用下さい。</p>
       </div>
     </div>
   </div>
@@ -56,9 +57,10 @@
         <p class="c-headingLv3 c-headingLv3-center">さあやってみよう！</p>
         <div class="loginContainer">
           <div class="login_item">
-            <a class="login_itemLink">
-              <%= image_tag'index/button-twitter-login.svg', alt: "Twitterでログイン" %>
-            </a>
+            <%= link_to "/auth/twitter", method: :post, class: 'login_itemLink' do %>
+              <span class="c-button c-button-twitter">
+              <span class="c-button_label"><i class="c-button_icon"></i>Twitterでログイン</span>
+            <% end %>
           </div>
         </div>
       </div>

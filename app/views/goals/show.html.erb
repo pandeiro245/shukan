@@ -5,7 +5,7 @@
                 <% from = Date.current.beginning_of_week; to =  from + 6.day %>
                 <p class="term"><%= from.strftime('%Y.%m.%d') %>〜<%= to.strftime('%Y.%m.%d') %>のシュウカン</p>
                 <div class="goalShowHeading">
-                    <h2 class="c-headingLv2"><%= @goal.name %></h2>
+                    <h2 class="c-headingLv2"><%= @goal.name %>（<%= @goal.category.name %>）</h2>
                 </div>
             </div>
             <div class="content_body">
