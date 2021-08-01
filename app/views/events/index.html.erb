@@ -2,12 +2,12 @@
   <div class="content">
     <div class="content_inner">
       <div class="content_header">
-        <h2 class="c-headingLv2"><%= @text_h2 %></h2>
-        <p class="content_lead"><%= @text.html_safe %></p>
+        <h2 class="c-headingLv2">おつかれさまでした！</h2>
+        <p class="content_lead">えらい！<br>明日もシュウカンを続けましょう！</p>
       </div>
       <div class="content_body">
         <div class="eventsImage">
-          <%= image_tag @image_path %>
+          <%= image_tag 'events/img-events.png' %>
         </div>
         <div class="weeklyStamp">
           <ul class="weeklyStampList">
@@ -17,12 +17,11 @@
           </ul>
         </div>
         <div class="shareAction">
-          <a href="https://twitter.com/share?url=https://shukan.today/&text=<%= @text_tweet %>%0a%0a===%0a「シュウカン」１週間だけ継続して習慣化するアプリ&hashtags=shukan" target="_blank" class="c-button c-button-twitter"><i class="c-button_icon"></i>Twitterでシェア</a>
+          <a href="https://twitter.com/share?url=https://shukan.today/&text=「<%= @current_user.goal.name %>」を達成しました！/&hashtags=シュウカン" target="_blank" class="c-button c-button-twitter"><i class="c-button_icon"></i>Twitterでシェア</a>
         </div>
       </div>
     </div>
   </div>
-
   <div class="content">
     <div class="content_inner">
       <div class="content_header">
