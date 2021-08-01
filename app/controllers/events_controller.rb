@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     if events.count == 7 # complete
       @text_h2 = 'おめでとう！'
       @text = '１週間続けられたあなたはすごい！<br>来週もシュウカンに挑戦してみてね！'
-      @text_tweet = "1週間「#{@current_user.goal.name} 」を1週間、毎日継続できました。やりきった〜！"
+      @text_tweet = "1週間「#{@current_user.goal.name} 」を、毎日継続できました。やりきった〜！"
       @image_path = 'events/img-complete.png'
     else
       @text_h2 = 'おつかれさまでした！'
