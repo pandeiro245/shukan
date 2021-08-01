@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     else
       @text_h2 = 'おつかれさまでした！'
       @text = 'えらい！<br>明日もシュウカンを続けましょう！'
-      @text_tweet = "1週間「#{@current_user.goal.name} 」を達成しました！"
+      @text_tweet = "「#{@current_user.goal.name} 」を達成しました！"
       @image_path = 'events/img-events.png'
     end
 
