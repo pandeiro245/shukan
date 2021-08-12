@@ -34,9 +34,11 @@ class User < ApplicationRecord
     image_url = auth[:info][:image]
     uri = URI.parse(image_url)
 
-    self.find_or_create_by(twitter_id: uid) do |user|
-      user.name = name
-      user.image_url = uri
-    end
+    user = self.find_or_create_by(twitter_id: uid)
+    user.name = name
+    user.image_url = uri
+    user.save!
+
+    user
   end
 end
