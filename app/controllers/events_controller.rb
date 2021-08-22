@@ -4,7 +4,7 @@ class EventsController < ApplicationController
     return (redirect_to goal_path(current_user.goals.last)) if current_user.present? && current_user.yet?
 
     @events = Event.includes(:goal).order('id desc').limit(50)
-    today = Time.zone.now.to_date
+    today = Util.now.to_date
     start_date = today.beginning_of_week
     end_date = today.end_of_week
     events = current_user.goal.events.where(
