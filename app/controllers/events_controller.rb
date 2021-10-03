@@ -1,10 +1,14 @@
 class EventsController < ApplicationController
+  def export
+    render json: Event.all.to_json
+  end
+
   def index
     return (redirect_to welcome_path) if current_user.blank?
     return (redirect_to goal_path(current_user.goals.last)) if current_user.present? && current_user.yet?
 
     @events = Event.includes(:goal).order('id desc').limit(50)
-    today = Time.zone.now.to_date
+    today = Util.now.to_date
     start_date = today.beginning_of_week
     end_date = today.end_of_week
     events = current_user.goal.events.where(

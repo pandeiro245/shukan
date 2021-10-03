@@ -1,5 +1,5 @@
   <div class="goalIntro">
-  <% from = Date.current.beginning_of_week; to =  from + 6.day %>
+  <% from = Util.now.to_date.beginning_of_week; to =  from + 6.day %>
   <p class="term"><%= from.strftime('%Y.%m.%d') %>〜<%= to.strftime('%Y.%m.%d') %></p>
     <p class="goalIntro_text">今週挑戦したいシュウカンを<br>これまでの項目から選択するか、<br>新しく登録してね</p>
     <div class="goalIntro_image">

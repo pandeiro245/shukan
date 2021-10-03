@@ -3,12 +3,12 @@ class User < ApplicationRecord
   belongs_to :goal, optional: true
 
   def yet?
-    Event.where(goal: goal, date_on: Date.current).blank?
+    Event.where(goal: goal, date_on: Util.now.to_date).blank?
   end
 
   def no_goal?
     return true if goal_id.blank?
-    return true if goal_updated_at < Time.now.beginning_of_week.in_time_zone('Tokyo') - 9.hour # Time.zone.now dont have beginning_of_week
+    return true if goal_updated_at < Util.now.beginning_of_week
     false
   end
 

@@ -1,8 +1,8 @@
 <div class="l-inner">
     <div class="content">
         <div class="content_inner">
-            <div class="content_header">
-                <% from = Date.current.beginning_of_week; to =  from + 6.day %>
+          <div class="content_header">
+                <% from = Util.now.to_date.beginning_of_week; to =  from + 6.day %>
                 <p class="term"><%= from.strftime('%Y.%m.%d') %>〜<%= to.strftime('%Y.%m.%d') %>のシュウカン</p>
                 <div class="goalShowHeading">
                     <h2 class="c-headingLv2"><%= @goal.name %>（<%= @goal.category.name %>）</h2>
