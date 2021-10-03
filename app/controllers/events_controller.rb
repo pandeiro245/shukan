@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+  def export
+    render json: Event.all.to_json
+  end
+
   def index
     return (redirect_to welcome_path) if current_user.blank?
     return (redirect_to goal_path(current_user.goals.last)) if current_user.present? && current_user.yet?
